@@ -1,0 +1,79 @@
+name: "Add Content to Project Management Process Docs"
+description: "Request to add a README with links and summary for OctoAcme Project Management Documentation."
+title: "[Process Doc Update]: README, project management processes summary, and links for docs folder"
+labels: ["documentation", "process improvement"]
+body:
+  - type: dropdown
+    id: process_doc
+    attributes:
+      label: "Which process document do you want to update? (If this is a new document, select '')"
+      description: "Select the program management process document you want to add content to. If this is a new process doc, choose ''."
+      options:
+        - octoacme-project-management-overview.md
+        - octoacme-project-initiation.md
+        - octoacme-project-planning.md
+        - octoacme-execution-and-tracking.md
+        - octoacme-risks-and-communication.md
+        - octoacme-release-and-deployment.md
+        - octoacme-retrospective-and-continuous-improvement.md
+        - octoacme-roles-and-personas.md
+        - 
+    validations:
+      required: true
+
+  - type: textarea
+    id: content_summary
+    attributes:
+      label: "Summary of New Content"
+      description: "Briefly describe the new content or update you want to add."
+      placeholder: "Add a README with a project management process summary and links to all docs."
+    validations:
+      required: true
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: "Why is this update needed?"
+      description: "Explain the reason for this addition. Is it to address a gap, improve clarity, incorporate a best practice, etc.?"
+      placeholder: "Centralize and summarize OctoAcme PM process for easier onboarding, search, and sharing."
+    validations:
+      required: true
+
+  - type: textarea
+    id: example_content
+    attributes:
+      label: "Suggested Content (optional)"
+      description: "Paste the proposed new text, checklist, diagram, or example content you'd like to add. (Optional)"
+      placeholder: |
+        # OctoAcme Project Management Documentation
+        
+        This README provides an overview and direct links to all core project management process documents used by the OctoAcme team. These processes enable consistent, transparent, and effective project delivery for cross-functional teams.
+        
+        ## Summary of Project Management Processes
+        - **Initiation**: Validate project need, align stakeholders, and document success criteria (see [Project Initiation Guide](docs/octoacme-project-initiation.md)).
+        - **Planning**: Break down work into iterative, deliverable parts and agree on timeline, risks, responsibilities ([Project Planning](docs/octoacme-project-planning.md)).
+        - **Execution & Tracking**: Maintain rapid feedback cycles, transparent tracking, regular demos, and escalation paths ([Execution & Tracking](docs/octoacme-execution-and-tracking.md)).
+        - **Risk Management & Communication**: Maintain a risk register, communicate regularly, and escalate blockers ([Risks & Communication](docs/octoacme-risks-and-communication.md)).
+        - **Release & Deployment**: Use checklists and playbooks for safe, predictable, and well-communicated releases ([Release & Deployment](docs/octoacme-release-and-deployment.md)).
+        - **Retrospective & Continuous Improvement**: Run retrospectives and track improvements ([Retrospective & Continuous Improvement](docs/octoacme-retrospective-and-continuous-improvement.md)).
+        - **Roles and Personas**: Clearly define team responsibilities and communication ([Roles and Personas](docs/octoacme-roles-and-personas.md)).
+        
+        ## Docs Index
+        - [Project Management Overview](docs/octoacme-project-management-overview.md)
+        - [Project Initiation Guide](docs/octoacme-project-initiation.md)
+        - [Project Planning](docs/octoacme-project-planning.md)
+        - [Execution & Tracking](docs/octoacme-execution-and-tracking.md)
+        - [Risks & Communication](docs/octoacme-risks-and-communication.md)
+        - [Release & Deployment](docs/octoacme-release-and-deployment.md)
+        - [Retrospective & Continuous Improvement](docs/octoacme-retrospective-and-continuous-improvement.md)
+        - [Roles and Personas](docs/octoacme-roles-and-personas.md)
+
+  - type: checkboxes
+    id: acceptance_criteria
+    attributes:
+      label: "Acceptance Criteria"
+      description: "Check all that apply:"
+      options:
+        - label: "Content aligns with existing process docs"
+        - label: "Update improves clarity or closes a documented gap"
+        - label: "Proposed content has been reviewed with stakeholders (if needed)"
